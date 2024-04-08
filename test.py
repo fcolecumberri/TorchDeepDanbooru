@@ -30,7 +30,7 @@ def scan_img(img_filename="test.jpg", threshold=0.5, stable_dif_print=False):
     output_array.sort(key=lambda x: x[1], reverse=True)
 
     if stable_dif_print:
-        print( ", ".join([ f"({model.tags[i]}:p)" for i, p in output_array if p >= threshold ]) )
+        print( ", ".join([ f"({model.tags[i]}:{p})" for i, p in output_array if p >= threshold ]) )
     else:
         for i, p in output_array:
             if p >= threshold:
